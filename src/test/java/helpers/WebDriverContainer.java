@@ -1,19 +1,12 @@
 package helpers;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.Browser;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.RemoteWebDriverBuilder;
 
-import java.io.File;
 import java.time.Duration;
 
 import static constants.Timeouts.IMPLICIT_WAIT;
@@ -21,11 +14,14 @@ import static constants.Timeouts.IMPLICIT_WAIT;
 public class WebDriverContainer {
 
     // NOTE: если драйвер статик, то не работает параллельный запуск
+
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
         final Logger logger = LogManager.getLogger(WebDriverContainer.class);
 
+        WebDriverManager.chromedriver().driverVersion("85").setup();
+        System.setProperty("chromeoptions.args", "--no-sandbox");
 
         if (driver == null) {
             logger.info("Driver created");

@@ -1,7 +1,5 @@
 package common;
 
-import lombok.Getter;
-
 
 public class Credentials {
 

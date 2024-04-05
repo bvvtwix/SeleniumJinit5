@@ -1,6 +1,5 @@
 package pages;
 
-import helpers.WebDriverContainer;
 import org.openqa.selenium.By;
 
 public class UserHomePage extends BasePage {
