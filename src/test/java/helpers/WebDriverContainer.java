@@ -19,7 +19,6 @@ public class WebDriverContainer {
 
     public static WebDriver getDriver() {
         final Logger logger = LogManager.getLogger(WebDriverContainer.class);
-
         WebDriverManager.chromedriver().driverVersion("85").setup();
         System.setProperty("chromeoptions.args", "--no-sandbox");
 
