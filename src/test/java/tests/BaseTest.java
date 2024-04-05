@@ -12,7 +12,7 @@ import static pages.RepoDetailsPage.REPO_DETAILS_URL;
 import static pages.RepositoriesPage.REPO_URL;
 
 public abstract class BaseTest {
-
+// test commit
     protected static final Logger logger = LogManager.getLogger(BaseTest.class);
     LoginPage loginPage = new LoginPage(LOGIN_PAGE_URL);
     UserHomePage userHomePage = new UserHomePage(BASE_URL);
